@@ -5,7 +5,11 @@ import React, { useEffect } from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import { Messaging } from "./components/Messaging";
 import { getUserAuth } from "./actions";
+import { MyBuddies } from "./components/MyBuddies";
+import { Opportunities } from "./components/Opportunities";
+import { Notifications } from "./components/Notifications";
 
 function App(props) {
   useEffect(() => {
@@ -19,9 +23,25 @@ function App(props) {
           <Route exact path="/">
             <Login />
           </Route>
-          <Route path="/home">
+          <Route path="/Home">
             <Header />
             <Home />
+          </Route>
+          <Route path = "/Messaging">
+            <Header/>
+            <Messaging/>
+          </Route>
+          <Route path = "/MyBuddies">
+            <Header/>
+            <MyBuddies/>
+          </Route>
+          <Route path = "/Opportunities">
+            <Header/>
+            <Opportunities/>
+          </Route>
+          <Route path = "/Notifications">
+            <Header/>
+            <Notifications/>
           </Route>
         </Switch>
       </Router>

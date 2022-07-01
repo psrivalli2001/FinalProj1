@@ -2,32 +2,15 @@ import styled from "styled-components";
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { signOutAPI } from "../actions";
-import {Link} from'react-router-dom'
+import {NavLink} from'react-router-dom';
+import { Messaging } from "./Messaging";
+import { MyBuddies } from "./MyBuddies";
+import { Notifications } from "./Notifications";
+import { Opportunities } from "./Opportunities";
+import { Route } from "react-router-dom";
 
 const Header = (props) => {
 
-  /*console.log(props.user)
-  const [current ,setCurrent]=useState(false)
-  const [displaySearch,setDisplaySearch]=useState(false)
-  const [displayWork,setDisplayWork]=useState(false)
-  const [Home,setHome]=useState(true)
-  const [Network,setNetwork]=useState(false)
-  const [Job,setJob]=useState(false)
-  const [Messaging,setMessaging]=useState(false)
-  const [Notf,setNotf]=useState(false)
-  const show=(home,network,jobs,messaging,notf)=>{
-    setHome(home);
-   setNetwork(network);
-  setJob(jobs);
-  setMessaging(messaging);
-  setNotf(notf);
-  
-  }
-  
-  const Display=()=>{
-      setDisplayWork(false);
-      console.log(displayWork)
-  }*/
   return (
     <Container>
       <Content>
@@ -46,43 +29,44 @@ const Header = (props) => {
         </Search>
         <Nav>
           <NavListWrap>
-            <NavList className="active">
-              <a>
+            <NavList>
+              <NavLink to = "/Home">
                 <img src="/images/nav-home.svg" alt="" />
                 <span>Home</span>
-              </a>
+              </NavLink>
             </NavList>
 
             <NavList>
-              <a>
+              <NavLink to ="/MyBuddies">
                 <img src="/images/nav-conn.svg" alt="" />
                 <span>My Buddies</span>
-              </a>
+              </NavLink>
             </NavList>
 
             <NavList>
-              <a>
+              <NavLink to ="/Opportunities">
                 <img src="/images/nav-opp.svg" alt="" />
                 <span>Opportunities</span>
-              </a>
+              </NavLink>
             </NavList>
             
               <NavList>
-                <a href = "./Messaging">
+                <NavLink to ="/Messaging">
                   <img src="/images/nav-msg.svg" alt="" />
                   <span>Chatting</span>
-                </a>
+                </NavLink>
               </NavList>
             
 
             <NavList>
-              <a>
+              <NavLink to ="/Notifications">
                 <img src="/images/nav-notifications.svg" alt="" />
                 <span>Notifications</span>
-              </a>
+              </NavLink>
             </NavList>
 
             <User>
+
               <a>
                 {props.user && props.user.photoURL ? (<img src= {props.user.photoURL} alt =""/>):
                   (<img src="/images/user.svg" alt="" />
@@ -96,16 +80,6 @@ const Header = (props) => {
                 <a>Sign Out</a>
               </SignOut>
             </User>
-
-            <Work>
-              <a>
-                <img src="/images/nav-work.svg" alt="" />
-                <span>
-                  Work
-                  <img src="/images/down-icon.svg" alt="" />
-                </span>
-              </a>
-            </Work>
           </NavListWrap>
         </Nav>
       </Content>

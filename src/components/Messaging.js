@@ -1,27 +1,29 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
  
-const Messaging = (props) => {
-    <p>Message</p>
+export function Messaging(props){
+    
     return (
-        <p>Hello</p>
-        
-       /* <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-        <div class="elfsight-app-fd3787f7-16b5-4fb3-a70b-6583d56b6f40"></div>
         <Container>
-        <Main>
-        <LeftandMiddle>
-        <h1>Message should be private <p></p>😀😀😀 </h1>
-        </LeftandMiddle>
-        <Right>
-        
-        </Right>
-        </Main>
-        </Container>*/
-        //Hello
+            <div>
+                <h2>Messaging Page</h2>
+                <img src= "/images/messaging-get-started.png" alt=""/>
+                                
+            </div>
+        </Container>
     )
-}
-export default Messaging;
+};
+
+const Container = styled.div`
+    grid-area: center;
+    div{
+        padding:100px, 100px, 10px, 100px;
+    }
+    img{
+        width: 100%;
+    }
+`;
+
 
 
 

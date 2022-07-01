@@ -12,9 +12,6 @@ const Leftside = (props) => {
             <Photo />
             <Link>Welcome, {props.user ? props.user.displayName: "there"}</Link>
           </a>
-          <a>
-            <AddPhotoText>Add a photo</AddPhotoText>
-          </a>
         </UserInfo>
         <Widget>
           <a>
@@ -87,7 +84,7 @@ const CardBackground = styled.div`
 
 const Photo = styled.div`
   box-shadow: none;
-  background-image: url("/images/photo.svg");
+  background-image: url({props.user && props.user.photoURL ? props.user.photoURL : "/images/photo.svg"});
   width: 72px;
   height: 72px;
   box-sizing: border-box;

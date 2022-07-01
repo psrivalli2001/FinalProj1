@@ -12,13 +12,10 @@ const Login = (props) => {
     <Container>
       {props.user && <Redirect to= "/home" />}
       <Nav>
-        <a href ="/">
+        <a>
           <img src="/images/kklogo.svg" alt="" />
         </a>
-        <div>
-          <Join>Join now</Join>
-          <SignIn>Sign in</SignIn>
-        </div>
+        
       </Nav>
       <Section>
         <Hero>
